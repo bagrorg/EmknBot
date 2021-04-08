@@ -1,16 +1,11 @@
 name: Scala CI
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  push
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -20,3 +15,10 @@ jobs:
         distribution: 'adopt'
     - name: Run tests
       run: sbt test
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Formatting
+      run: sbt scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
