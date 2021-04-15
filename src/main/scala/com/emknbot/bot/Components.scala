@@ -10,5 +10,5 @@ object ComponentsAliases {
 }
 
 case class User(name : String, email: Email, password: Password, id : ID)
-case class Event(description: String, dateTime : ZonedDateTime)
-case class Calendar(schedule: Map[ZonedDateTime, List[Event]])
+case class Event(description: String, dateTimeStart : ZonedDateTime, dateTimeEnd : ZonedDateTime)
+case class Calendar(user : User, events: List[Event])
