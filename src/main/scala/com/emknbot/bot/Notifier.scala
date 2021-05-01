@@ -1,7 +1,5 @@
 package com.emknbot.bot
 
-trait Notifier {
-  def subscribe(user: User)
-  def unsubscribe(user: User)
-  def notifySubscribers()
+trait Notifier[F[_]] {
+  def notifyUser(user: User, event: Event): F[Unit]
 }
