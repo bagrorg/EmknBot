@@ -1,7 +1,7 @@
 package com.emknbot.bot
 
 trait Repository[F[_], Id, Data] {
-  def save(data: Data) : F[Unit]
+  def save(id : Id, data: Data) : F[Unit]
   def findByID(id : Id) : F[Either[String, Data]]
   def getAll() : F[List[(Id, Data)]]
 }
