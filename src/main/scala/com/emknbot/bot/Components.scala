@@ -1,8 +1,6 @@
 package com.emknbot.bot
 
 import java.time.ZonedDateTime
-import canoe.models.MessageEntity.Email
-import sun.security.util.Password
 
 sealed trait SourceType
 
