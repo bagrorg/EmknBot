@@ -8,7 +8,8 @@ lazy val root = project.in(file("."))
     name := "EmknBot",
     mainClass in (Compile, run) := Some("com.emknbot.bot.Main"),
     libraryDependencies += "org.augustjune" %% "canoe" % "0.5.1",
-    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.5" % "test"
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.5" % "test",
+    scalacOptions += "-deprecation"
   )
   .settings(
         semanticdbEnabled := true,
